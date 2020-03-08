@@ -1,0 +1,17 @@
+---
+# tasks file for vagrant
+
+# Instalação do virtualbox
+- name: Virtualbox -  Instalando via apt. Esta tarefa pode demorar alguns minutos...
+  apt:
+    pkg: "virtualbox"
+    state: present
+
+- name: Vagrant - Download do pacote .deb
+  get_url:
+    url: https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb
+    dest: /tmp/vagrant_2.2.7_x86_64.deb
+
+- name: Vagrant - Instalando o pacote .deb
+  apt:
+    deb: /tmp/vagrant_2.2.7_x86_64.deb
