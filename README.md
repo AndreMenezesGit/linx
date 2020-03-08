@@ -34,5 +34,5 @@ ansible localhost -m ping
 
 
 #TO DO
-
+Padronizar nomes de arquivos em inglês - Nomes de arquivos e  comentários em pt_br
 Remover .deb do vagrant após a instalação via ansible
