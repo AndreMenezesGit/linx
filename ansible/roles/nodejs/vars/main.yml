@@ -1,0 +1,5 @@
+---
+# vars file for vagrant
+
+nodejs_npm_global_packages:
+- name: express
