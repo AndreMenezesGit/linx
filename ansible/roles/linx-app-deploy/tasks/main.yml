@@ -1,0 +1,11 @@
+---
+# tasks file for linx-app-deploy
+
+- name: Criar link para utilização do pacote Express pela aplicação
+  shell: cd /tmp/linx/src && npm link express
+
+- name: Criar link para utilização do pacote Express pela aplicação
+  shell: cd /tmp/linx/src && npm link cluster
+
+- name: Executando aplicação
+  shell: cd /tmp/linx/src && node app.js
