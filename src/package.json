@@ -1,0 +1,14 @@
+{
+  "name": "linx_hello_world_app",
+  "version": "1.0.0",
+  "description": "Node.js Hello World Application",
+  "author": "André Menezes <af.menezes@outlook.com>",
+  "main": "app.js",
+  "scripts": {
+    "run": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "cluster": "0.7.7"
+  }
+}
