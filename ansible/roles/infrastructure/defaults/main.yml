@@ -1,4 +1,0 @@
----
-# defaults file for system-config
-
-apt_install_packages: [virtualbox]
