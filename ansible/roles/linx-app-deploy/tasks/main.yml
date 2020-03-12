@@ -7,5 +7,5 @@
 - name: Criar link para utilização do pacote Express pela aplicação
   shell: cd /tmp/linx/src && npm link cluster
 
-- name: Executando aplicação
-  shell: cd /tmp/linx/src && node app.js
+- name: Executando aplicação em background
+  shell: cd /tmp/linx/src && nohup node app.js > /tmp/node_app_output.log
