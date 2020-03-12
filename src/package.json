@@ -1,0 +1,15 @@
+{
+  "name": "node_web_app",
+  "version": "1.0.0",
+  "description": "Node.js Express",
+  "author": "André Menezes <af.menezes@outlook.com>",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start-background": "nohup node app.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "cluster": "0.7.7"
+  }
+}
