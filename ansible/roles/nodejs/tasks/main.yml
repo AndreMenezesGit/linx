@@ -29,15 +29,3 @@
   apt:
     name: "nodejs={{ nodejs_version|regex_replace('x', '') }}*"
     state: present
-
-- name: Instalar Express framework
-  npm:
-    name: express
-    version: '4.6.1'
-    global: yes
-
-- name: Instalar package Cluster
-  npm:
-    name: cluster
-    version: '0.7.7'
-    global: yes

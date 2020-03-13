@@ -8,4 +8,4 @@
   shell: cd /tmp/linx/src && npm link cluster
 
 - name: Executando aplicação em background
-  shell: cd /tmp/linx/src && nohup node app.js > /tmp/node_app_output.log
+  shell: cd /tmp/linx/src && nohup node linx-app-cluster.js > /tmp/node_app_output.log
