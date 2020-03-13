@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - linx-app-deploy
+    - system-config

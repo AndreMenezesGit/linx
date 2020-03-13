@@ -1,0 +1,13 @@
+---
+# defaults file for system-config
+
+apt_cache_valid_time: 3600
+apt_install_packages: [
+  "curl",
+  "wget",
+  "apt-transport-https",
+  "ca-certificates",
+  "jq",
+  "httperf"
+]
+apt_setup_unattended_upgrades: yes

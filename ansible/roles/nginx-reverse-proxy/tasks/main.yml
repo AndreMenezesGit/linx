@@ -1,0 +1,46 @@
+---
+# tasks file for nginx-reverse-proxy
+
+- name: Install nginx from package
+  become: true
+  package:
+    name: "{{ nginx_package_name }}"
+    state: present
+
+- name: Enable nginx service
+  become: true
+  systemd:
+    daemon_reload: "{{ nginx_service_nginx_daemon_reload }}"
+    enabled: "{{ nginx_service_nginx_enabled }}"
+    name: "{{ nginx_service_nginx_name }}"
+  register: nginx_service_nginx
+  when: nginx_service_nginx_manage
+
+- name: Set nginx service state
+  become: true
+  systemd:
+    daemon_reload: "{{ nginx_service_nginx_daemon_reload }}"
+    name: "{{ nginx_service_nginx_name }}"
+    state: "{{ nginx_service_nginx_state }}"
+  register: nginx_service_nginx_state_info
+  when:
+    - nginx_service_nginx_manage
+    - nginx_service_nginx_state in ['reloaded', 'restarted', 'started', 'stopped']
+
+- name: Adicionando o arquivo de configuração pra proxy reverso da aplicação node
+  copy:
+    src: /etc/ansible/roles/nginx-reverse-proxy/files/nodeapp.conf
+    dest: /etc/nginx/sites-available/nodeapp.conf
+    remote_src: yes
+    force: yes
+
+- name: Adicionando o arquivo de configuração pra proxy reverso da aplicação node_app_output
+  file:
+    src: /etc/nginx/sites-available/nodeapp.conf
+    dest: /etc/nginx/sites-enabled/nodeapp.conf
+    state: link
+    force: yes
+  #  shell: sudo ln -s /etc/nginx/sites-available/nodeapp.conf /etc/nginx/sites-enabled/nodeapp.conf
+
+- name: restart nginx
+  service: name=nginx state=restarted
