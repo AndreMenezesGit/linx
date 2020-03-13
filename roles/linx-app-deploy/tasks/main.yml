@@ -1,0 +1,11 @@
+---
+# tasks file for linx-app-deploy
+
+- name: Instalar pm2 globalmente
+  shell: npm install pm2@4.2.3 -g
+
+- name: Instalar demais dependências da aplicação
+  shell: cd /etc/ansible/src && npm install -save
+
+- name: Executando aplicação em background
+  shell: cd /etc/ansible/src && pm2 start app.js -i 0
