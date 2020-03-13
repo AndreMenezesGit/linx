@@ -3,16 +3,16 @@
 # Executando testes de carga:
 
 - name: Executando teste de carga 01...
-  shell: httperf --server localhost --port 80 --num-conns 10000 --rate 1000 --num-cal 20 --timeout 5 >> /tmp/tc1.log
+  shell: httperf --server localhost --port 80 --num-conns 10000 --rate 1000 --num-cal 20 --timeout 5 >> /etc/ansible/logs/tc1.log
 
 - name: Executando teste de carga 02...
-  shell: httperf --server localhost --port 80 --num-conns 20000 --rate 5000 --num-cal 20 --timeout 5 >> /tmp/tc2.log
+  shell: httperf --server localhost --port 80 --num-conns 20000 --rate 5000 --num-cal 20 --timeout 5 >> /etc/ansible/logs/tc1.log
 
 - name: Executando teste de carga 03...
-  shell: httperf --server localhost --port 80 --num-conns 30000 --rate 10000 --num-cal 20 --timeout 5 >> /tmp/tc3.log
+  shell: httperf --server localhost --port 80 --num-conns 30000 --rate 10000 --num-cal 20 --timeout 5 >> /etc/ansible/logs/tc1.log
 
 - name: Executando teste de carga 04...
-  shell: httperf --server localhost --port 80 --num-conns 40000 --rate 15000 --num-cal 20 --timeout 5 >> /tmp/tc4.log
+  shell: httperf --server localhost --port 80 --num-conns 40000 --rate 15000 --num-cal 20 --timeout 5 >> /etc/ansible/logs/tc1.log
 
 - name: Executando teste de carga 05...
-  shell: httperf --server localhost --port 80 --num-conns 50000 --rate 20000 --num-cal 20 --timeout 5 >> /tmp/tc5.log
+  shell: httperf --server localhost --port 80 --num-conns 50000 --rate 20000 --num-cal 20 --timeout 5 >> /etc/ansible/logs/tc1.log
