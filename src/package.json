@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "express": "^4.16.1",
-    "cluster": "0.7.7"
+    "cluster": "0.7.7",
+    "pm2": "2.2.2"
   }
 }

@@ -3,6 +3,7 @@ var app = express();
 
 app.get('/', function (req, res) {
 res.send('Hello World!');
+/*res.send('Hello World com zero downtime!!!');*/
 });
 
 app.listen(3000, function () {
